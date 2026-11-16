@@ -46,10 +46,10 @@ def process_page(page,flag,msg,tag):
     if msg == "":
         data = '<div class="solution-text"><img src="{0}" alt="Start" width="150" height="150"><br>Let the game begin. Good Luck</div>'.format(IMAGE_ROUTES[tag]['start'])
     else:
-        if result == 'XSS':
+        if result == 'MSG':
             data = '<div class="solution-text"><img src="{0}" alt="Correct" width="150" height="150"><br>Congratulations!<p> Here is the flag: {1}</div>'.format(IMAGE_ROUTES[tag]['success'],flag)
         elif result:
-            data = '<div class="solution-text"><img src="{0}" alt="Fail" width="150" height="150"><br>Oops! You did an alert with {1} instead of "XSS"</div>'.format(IMAGE_ROUTES[tag]['process'], cgi.escape(result))
+            data = '<div class="solution-text"><img src="{0}" alt="Fail" width="150" height="150"><br>Oops! You did an alert with {1} instead of "MSG"</div>'.format(IMAGE_ROUTES[tag]['process'], cgi.escape(result))
         else:
             data = '<div class="solution-text"><img src="{0}" alt="Fail" width="150" height="150"><br>Failed! Try again!</div>'.format(IMAGE_ROUTES[tag]['error'])
     return data
@@ -57,7 +57,7 @@ def process_page(page,flag,msg,tag):
 
                                          
 
-@app.route('/xss5')
+@app.route('/page5')
 def process_input():
     msg = request.args.get('name','')
     blacklist = ['alert','confirm']                                          
@@ -67,12 +67,12 @@ def process_input():
         if word in msg.lower():
             error_msg = """<div class="solution-text">Sorry you can't use: '%s'</div>""" % word
             value = ">"
-            return XSS_CONTENT.format("5","Circle",value,"",error_msg)
+            return PAGE_CONTENT.format("5","Circle",value,"",error_msg)
 
-    data = XSS_CONTENT.format("5","Circle",value, "","")
-    result= check_xss(data,flags[0],msg,'xss_easy')
+    data = PAGE_CONTENT.format("5","Circle",value, "","")
+    result= check_submission(data,flags[0],msg,'page_easy')
 
-    response = make_response(XSS_CONTENT.format("5","Circle",value, result, ""))
+    response = make_response(PAGE_CONTENT.format("5","Circle",value, result, ""))
     response.headers["X-XSS-Protection"] = "0"
     return response
 

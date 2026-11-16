@@ -52,10 +52,10 @@ def validate_content(page,flag,msg,tag):
     if msg == "":
         data = '<div class="solution-text"><img src="{0}" alt="Start" width="150" height="150"><br>Let the game begin. Good Luck</div>'.format(IMAGE_ROUTES[tag]['start'])
     else:
-        if result == 'XSS':
+        if result == 'MSG':
             data = '<div class="solution-text"><img src="{0}" alt="Correct" width="150" height="150"><br>Congratulations!<p> Here is the flag: {1}</div>'.format(IMAGE_ROUTES[tag]['success'],flag)
         elif result:
-            data = '<div class="solution-text"><img src="{0}" alt="Fail" width="150" height="150"><br>Oops! You did an alert with {1} instead of "XSS"</div>'.format(IMAGE_ROUTES[tag]['process'], cgi.escape(result))
+            data = '<div class="solution-text"><img src="{0}" alt="Fail" width="150" height="150"><br>Oops! You did an alert with {1} instead of "MSG"</div>'.format(IMAGE_ROUTES[tag]['process'], cgi.escape(result))
         else:
             data = '<div class="solution-text"><img src="{0}" alt="Fail" width="150" height="150"><br>Failed! Try again!</div>'.format(IMAGE_ROUTES[tag]['error'])
     return data
@@ -63,8 +63,8 @@ def validate_content(page,flag,msg,tag):
 
                                          
 
-@app.route('/xss2')
-def xss2():
+@app.route('/page2')
+def page2():
     msg = request.args.get('url','')
     msg = re.sub(r'\"', "", msg)                       
     msg = re.sub(r"[<>]", "", msg)                
@@ -72,9 +72,9 @@ def xss2():
 
     value =  "class=\"text-img\" src=./static/img/head.png" if msg == "" else 'src="{0}"'.format(msg)
 
-    data = XSS_CONTENT_IFRAME.format("2", "Circle", value, "", "")
-    result = check_xss(data,flags[0],msg,'xss_easy')
-    return XSS_CONTENT_IFRAME.format("2", "Circle", value, result, "")
+    data = PAGE_CONTENT_IFRAME.format("2", "Circle", value, "", "")
+    result = check_submission(data,flags[0],msg,'page_easy')
+    return PAGE_CONTENT_IFRAME.format("2", "Circle", value, result, "")
 
 if __name__ == '__main__':
                                                       
