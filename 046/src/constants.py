@@ -4,7 +4,7 @@ INDEX_CONTENT = """
             <link rel="shortcut icon" href="static/assets/fav-icon.png">
             <link rel="stylesheet" type="text/css" href="static/css/style.css">
             <link rel="stylesheet" type="text/css" href="static/css/page/index.css">
-            <title>Dalgona Challenges</title>
+            <title>Game Pages</title>
         </head>
 
 	        <article class="widget widget__login">
@@ -12,7 +12,7 @@ INDEX_CONTENT = """
 	    		<div class="box">
 	                <form class="box-form">
 	                    <img class="text-img" src="static/img/logo5_white.png">
-				        <h1>Dalgona Challenges</h1>
+				        <h1>Game Pages</h1>
 	                    <div class="init-table">
                             <div class="row">
                                 <div class="column"><a class="text" type=text href="page25"><img src="static/img/cookies/new_star.png" alt="Star" width="150" height="150">MSG 25</a></div>
@@ -36,7 +36,7 @@ PAGE_CONTENT = """
             <link rel="shortcut icon" href="static/assets/fav-icon.png">
             <link rel="stylesheet" type="text/css" href="static/css/style.css">
             <link rel="stylesheet" type="text/css" href="static/css/page/page{0}.css">
-            <title>Dalgona - {1}</title>
+            <title>Game - {1}</title>
         </head>
 
         <article class="widget widget__login">
@@ -59,7 +59,7 @@ PAGE_CONTENT_POST = """
             <link rel="shortcut icon" href="static/assets/fav-icon.png">
             <link rel="stylesheet" type="text/css" href="static/css/style.css">
             <link rel="stylesheet" type="text/css" href="static/css/page/page{0}.css">
-            <title>Dalgona - {1}</title>
+            <title>Game - {1}</title>
         </head>
         <article class="widget widget__login">
         <div class="widget__content">
@@ -68,7 +68,7 @@ PAGE_CONTENT_POST = """
                     <img class="text-img" src="static/img/logo5_white.png">
                     {4}
                     {3}
-                    <input type=text name=solution placeholder="Enter solution..." {2}>
+                    <input type=text name=solution placeholder="Enter value..." {2}>
                 </form>
             </div>
         </div>
@@ -81,7 +81,7 @@ PAGE_CONTENT_TAG = """
             <link rel="shortcut icon" href="static/assets/fav-icon.png">
             <link rel="stylesheet" type="text/css" href="static/css/style.css">
             <link rel="stylesheet" type="text/css" href="static/css/page/page{0}.css">
-            <title>Dalgona - {1}</title>
+            <title>Game - {1}</title>
         </head>
     
         <article class="widget widget__login">
@@ -105,7 +105,7 @@ PAGE_CONTENT_TAG_POST = """
             <link rel="shortcut icon" href="static/assets/fav-icon.png">
             <link rel="stylesheet" type="text/css" href="static/css/style.css">
             <link rel="stylesheet" type="text/css" href="static/css/page/page{0}.css">
-            <title>Dalgona - {1}</title>
+            <title>Game - {1}</title>
         </head>
 
         <article class="widget widget__login">
@@ -115,7 +115,7 @@ PAGE_CONTENT_TAG_POST = """
                     <img class="text-img" src="static/img/logo5_white.png">
                     {4}
                     {3}
-                    <input type=text name=solution placeholder="Enter solution...">
+                    <input type=text name=solution placeholder="Enter value...">
                     {2}
                 </form>
             </div>
@@ -129,7 +129,7 @@ PAGE_CONTENT_IFRAME = """
             <link rel="shortcut icon" href="static/assets/fav-icon.png">
             <link rel="stylesheet" type="text/css" href="static/css/style.css">
             <link rel="stylesheet" type="text/css" href="static/css/page/page{0}.css">
-            <title>Dalgona - {1}</title>
+            <title>Game - {1}</title>
         </head>
 
         <article class="widget widget__login">
@@ -154,7 +154,7 @@ PAGE_CONTENT_TEXTAREA_POST = """
             <link rel="shortcut icon" href="static/assets/fav-icon.png">
             <link rel="stylesheet" type="text/css" href="static/css/style.css">
             <link rel="stylesheet" type="text/css" href="static/css/page/page{0}.css">
-            <title>Dalgona - {1}</title>
+            <title>Game - {1}</title>
         </head>
 
         <article class="widget widget__login">
